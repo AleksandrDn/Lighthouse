@@ -1,0 +1,301 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Администратор</title>
+  <!-- Bootstrap Styles-->
+  <link href="/dashboard/css/bootstrap.css" rel="stylesheet" />
+  <!-- FontAwesome Styles-->
+  <link href="/dashboard/css/font-awesome.css" rel="stylesheet" />
+  <!-- Morris Chart Styles-->
+  <link href="/dashboard/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+  <!-- Custom Styles-->
+  <link href="/dashboard/css/custom-styles.css" rel="stylesheet" />
+  <!-- Google Fonts-->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+</head>
+
+<body>
+<c:url value="/j_spring_security_logout" var="logoutUrl" />
+<div id="wrapper">
+  <nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Lighthouse</a>
+    </div>
+
+    <ul class="nav navbar-top-links navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-messages">
+          <li>
+            <a href="#">
+              <div>
+                <strong>John Doe</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Today</em>
+                                    </span>
+              </div>
+              <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+              </div>
+              <div>Lorem Ipsum has been the industry's standard dummy text ever since an kwilnw...</div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <strong>John Smith</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>Yesterday</em>
+                                    </span>
+              </div>
+              <div>Lorem Ipsum has been the industry's standard dummy text ever since the...</div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a class="text-center" href="#">
+              <strong>Read All Messages</strong>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- /.dropdown-messages -->
+      </li>
+      <!-- /.dropdown -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <i class="fa fa-tasks fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-tasks">
+          <li>
+            <a href="#">
+              <div>
+                <p>
+                  <strong>Отдыхающих</strong>
+                  <span class="pull-right text-muted">${campers}% Отдыхает</span>
+                </p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="${campers}" aria-valuemin="0" aria-valuemax="100" style="width: ${campers}%">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <p>
+                  <strong>Номеров</strong>
+                  <span class="pull-right text-muted">${rooms}% Заполнено</span>
+                </p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="${rooms}" aria-valuemin="0" aria-valuemax="100" style="width: ${rooms}%">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="#">
+              <div>
+                <p>
+                  <strong>Занятость персонала</strong>
+                  <span class="pull-right text-muted">${employees}% Занято</span>
+                </p>
+                <div class="progress progress-striped active">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="${employees}" aria-valuemin="0" aria-valuemax="100" style="width: ${employees}%">
+                    <span class="sr-only"></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a class="text-center" href="/admin/indexAdm">
+              <strong>Смотреть статистику</strong>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- /.dropdown-tasks -->
+      </li>
+      <!-- /.dropdown -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <i class="fa fa-bell fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-alerts">
+          <li>
+            <a href="#">
+              <div>
+                <i class="fa fa-comment fa-fw"></i> Новое бронирование
+                <span class="pull-right text-muted small">1</span>
+              </div>
+            </a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a class="text-center" href="#">
+              <strong>Смотреть детали</strong>
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </li>
+        </ul>
+        <!-- /.dropdown-alerts -->
+      </li>
+      <!-- /.dropdown -->
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+          <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+        </a>
+        <ul class="dropdown-menu dropdown-user">
+          <li><a href="/admin/indexAdm"><i class="fa fa-user fa-fw"></i> Администрирование</a>
+          </li>
+          <li class="divider"></li>
+          <li><a href="${logoutUrl}"><i class="fa fa-sign-out fa-fw"></i> Выйти</a>
+          </li>
+        </ul>
+        <!-- /.dropdown-user -->
+      </li>
+      <!-- /.dropdown -->
+    </ul>
+  </nav>
+  <!--/. NAV TOP  -->
+  <nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+      <ul class="nav" id="main-menu">
+
+        <li>
+          <a class="active-menu" href="/admin/indexAdm"><i class="fa fa-dashboard"></i> Статистика</a>
+        </li>
+        <li>
+          <a href="/admin/newsAdm"><i class="fa fa-table"></i> Новости</a>
+        </li>
+        <li>
+          <a href="/admin/clientAdm"><i class="fa fa-users"></i> Клиенты</a>
+        </li>
+        <li>
+          <a href="/admin/phonesAdm"><i class="fa fa-phone"></i> Телефоны</a>
+        </li>
+        <li>
+          <a href="/admin/reviewsAdm"><i class="fa fa-thumbs-o-up"></i> Отзывы</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+  <!-- /. NAV SIDE  -->
+  <div id="page-wrapper">
+    <div id="page-inner">
+
+
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="page-header">
+            Администратор <small>Статистика</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="/">Главная</a></li>
+            <li class="active">Администратор</li>
+          </ol>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-body easypiechart-panel">
+              <h4>Отдыхающих</h4>
+              <div class="easypiechart" id="easypiechart-blue" data-percent="${campers}" ><span class="percent">${campers}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-body easypiechart-panel">
+              <h4>Номеров</h4>
+              <div class="easypiechart" id="easypiechart-orange" data-percent="${rooms}" ><span class="percent">${rooms}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-body easypiechart-panel">
+              <h4>Занятость персонала</h4>
+              <div class="easypiechart" id="easypiechart-teal" data-percent="${employees}" ><span class="percent">${employees}%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%--<div class="col-xs-6 col-md-3">--%>
+          <%--<div class="panel panel-default">--%>
+            <%--<div class="panel-body easypiechart-panel">--%>
+              <%--<h4>?</h4>--%>
+              <%--<div class="easypiechart" id="easypiechart-red" data-percent="?" ><span class="percent">?%</span>--%>
+              <%--</div>--%>
+            <%--</div>--%>
+          <%--</div>--%>
+        <%--</div>--%>
+      </div><!--/.row-->
+    </div>
+    <!-- /. PAGE INNER  -->
+  </div>
+  <!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="/dashboard/js/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="/dashboard/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Js -->
+<script src="/dashboard/js/jquery.metisMenu.js"></script>
+<!-- Morris Chart Js -->
+<script src="/dashboard/js/morris/raphael-2.1.0.min.js"></script>
+<script src="/dashboard/js/morris/morris.js"></script>
+
+
+<script src="/dashboard/js/easypiechart.js"></script>
+<script src="/dashboard/js/easypiechart-data.js"></script>
+
+
+<!-- Custom Js -->
+<script src="/dashboard/js/custom-scripts.js"></script>
+
+
+</body>
+
+</html>

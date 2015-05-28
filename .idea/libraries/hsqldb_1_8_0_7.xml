@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="hsqldb-1.8.0.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.idea/libraries/hsqldb-1.8.0.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
